@@ -1,6 +1,6 @@
 {
-    "name": "dplayer",
-    "version": "1.27.1",
+    "name": "@spyeic/dplayer",
+    "version": "1.0.0",
     "description": "Wow, such a lovely HTML5 danmaku video player",
     "main": "dist/DPlayer.min.js",
     "types": "types/index.d.ts",
@@ -21,7 +21,7 @@
         "dist"
     ],
     "repository": {
-        "url": "git+https://github.com/DIYgod/DPlayer.git",
+        "url": "git+https://github.com/spyeic/DPlayer.git",
         "type": "git"
     },
     "keywords": [
@@ -30,12 +30,12 @@
         "video",
         "html5"
     ],
-    "author": "DIYgod",
+    "author": "spyeic",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/DIYgod/DPlayer/issues"
+        "url": "https://github.com/spyeic/DPlayer/issues"
     },
-    "homepage": "https://github.com/DIYgod/DPlayer#readme",
+    "homepage": "https://github.com/spyeic/DPlayer#readme",
     "devDependencies": {
         "@babel/core": "^7.25.2",
         "@babel/preset-env": "^7.25.3",
