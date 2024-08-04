@@ -29,7 +29,7 @@ class DPlayer {
     /**
      * DPlayer constructor function
      *
-     * @param {Object} options - See README
+     * @param {import('./options').DPlayerOptions} options - See README
      * @constructor
      */
     constructor(options) {

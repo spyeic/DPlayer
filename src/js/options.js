@@ -1,6 +1,75 @@
 /* global DPLAYER_VERSION */
 import defaultApiBackend from './api.js';
 
+/**
+ * @typedef {import('./player').default} DPlayer
+ *
+ * @typedef {{
+ *     quality?: { name: string, url: string, type: string }[],
+ *     defaultQuality?: number,
+ *     url?: string,
+ *     pic?: string,
+ *     thumbnails?: string,
+ *     type?: 'auto' | 'hls' | 'flv' | 'dash' | 'webtorrent' | 'normal' | string,
+ *     customType?: { [index: string]: (video: Video, player: DPlayer) => void },
+ * }} Video
+ *
+ * @typedef {{
+ *     container?: HTMLElement,
+ *     element?: HTMLElement,
+ *     live?: boolean,
+ *     autoplay?: boolean,
+ *     theme?: string,
+ *     loop?: boolean,
+ *     lang?: 'en' | 'zh-cn'| 'zh-tw' | 'ko-kr' | 'de' | 'ja' | 'ru',
+ *     screenshot?: boolean,
+ *     hotkey?: boolean,
+ *     pictureInPicture?: boolean,
+ *     airplay?: boolean,
+ *     chromecast?: boolean,
+ *     preload?: 'none' | 'metadata' | 'auto',
+ *     volume?: number,
+ *     playbackSpeed?: number[],
+ *     logo?: string,
+ *     apiBackend?: {
+ *         send: (options: { url: string, data: any, success: (data: any) => void, error: (msg: string) => void }) => void,
+ *         read: (options: { url: string, success: (data: any) => void, error: (msg: string) => void }) => void,
+ *     },
+ *     preventClickToggle?: boolean,
+ *     video?: Video,
+ *     subtitle?: {
+ *         url: string,
+ *         type?: 'webvtt',
+ *         fontSize?: string,
+ *         bottom?: string,
+ *         color?: string,
+ *     }
+ *     danmaku?: {
+ *         id: string,
+ *         api: string,
+ *         token?: string,
+ *         maximum?: number,
+ *         addition?: string[],
+ *         user?: string,
+ *         bottom?: string,
+ *         unlimited?: boolean,
+ *         speedRate?: number,
+ *     },
+ *     contextmenu?: {
+ *         text: string,
+ *         link?: string,
+ *         click?: (player: DPlayer) => void,
+ *     }[],
+ *     highlight?: {
+ *         time: number,
+ *         text: string,
+ *     }[],
+ *     mutex?: boolean,
+ * }} DPlayerOptions
+ *
+ * @param {DPlayerOptions} options
+ * @return {DPlayerOptions}
+ */
 export default (options) => {
     // default options
     const defaultOption = {
@@ -11,6 +80,7 @@ export default (options) => {
         loop: false,
         lang: (navigator.language || navigator.browserLanguage).toLowerCase(),
         screenshot: false,
+        pictureInPicture: true,
         airplay: true,
         chromecast: false,
         hotkey: true,
