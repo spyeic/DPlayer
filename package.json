@@ -18,7 +18,8 @@
         "**/*": "prettier --write --ignore-unknown"
     },
     "files": [
-        "dist"
+        "dist",
+        "types"
     ],
     "repository": {
         "url": "git+https://github.com/spyeic/DPlayer.git",
